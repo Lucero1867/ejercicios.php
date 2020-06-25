@@ -7,6 +7,6 @@ $conjunto = array($num, $num1, $num2);
 
 sort($conjunto, SORT_NUMERIC);
 
-foreach ($conjunto as $key){
+foreach($conjunto as $key){
     echo " $key";
 }
