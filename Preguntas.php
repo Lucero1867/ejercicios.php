@@ -1,19 +1,19 @@
 <?php
 
 include 'respuestasCorrectas.php';
-$correcta = 0;
-$incorrecta = 0;
-$nula = 0;
 $estudiante = "";
 $nota = 0;
 
 while($estudiante != "no"){
     
+    $correcta = 0;
+    $incorrecta = 0;
+    $nula = 0;
+    
     for($i = 1; $i <= 50; $i++){
         
         echo "Pregunta $i: \n 0, 1, 2, 3, 4 o 5 \n";
         $respuesta = readline("Respuesta: ");
-        
         if($respuesta == $respuestasCorrectas[$i - 1]){
             $correcta += 1;
             
