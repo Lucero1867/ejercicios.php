@@ -1,42 +1,42 @@
 <?php
 
-$numero = readline("Cuantos primos: 10");
-$posibleprimo = 0;
-$primo = [];
+$numero = readline("Cuantos primos: ");
 
-for ($i = 1; $i <= 10; $i++){
-    for($j = 1; $j <= 10; $j++){
-    
-        if($j % $i == 0){
+
+function es_primo($numero){
+    $posibleprimo = 0;
+    for($i = 1; $i <= $numero; $i++){
+        if($numero % $i == 0){
             $posibleprimo++;
-
-            if($posibleprimo == 2){
-                array_push($primo, $posibleprimo);
-            }
         }
     }
-    // echo "$i \n";
+    return $posibleprimo == 2;
 }
 
-
-print_r($primo);
-
-
-// while ($primos != $numero){
-
-//     for($i = 1; $i <= $numero; $i++){
+$contador = 0;
+$i = 1;
+do {
+    $i++;
+    $es_primo = es_primo($i);
     
-//         if($numero % $i == 0){
-//             $posibleprimo++;
-            
-//             if ()
+    if($es_primo == true){
+        $contador++;
+        echo "$i\n";
+    }
+    
+} while($contador < $numero);
+
+
+
+// for($i = 1; $i <= 50; $i++){
+//     $es_primo = es_primo($i);
+    
+//     if($es_primo == true){
+//         $contador++;
+//         echo "$i\n";
+
+//         if($contador == $numero){
+//             break;
 //         }
 //     }
-// }
-
-// if($posibleprimo != 2){
-//     echo "$numero es  compuesto";
-// }
-// else{
-//     echo "$numero es primo";
 // }
