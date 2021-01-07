@@ -2,7 +2,6 @@
 
 $numero = readline("Cuantos primos: ");
 
-
 function es_primo($numero){
     $posibleprimo = 0;
     for($i = 1; $i <= $numero; $i++){
@@ -16,15 +15,14 @@ function es_primo($numero){
 $contador = 0;
 $i = 1;
 do {
-    $i++;
-    $es_primo = es_primo($i);
-    
-    if($es_primo == true){
+   
+    if(es_primo(++$i)){
         $contador++;
-        echo "$i\n";
+        echo $i . "\n";
     }
     
 } while($contador < $numero);
+
 
 
 
