@@ -2,21 +2,29 @@
 
 $numero_entero = readline("Ingrese numero: ");
 
-// for($i = 2; $i < $numero_entero; $i++){
-//     // $resultado = $numero_entero / $i;
-//     if (($numero_entero % $i) == 0){
+function es_primo($numero){
+    $posibleprimo = 0;
+    for($i = 1; $i <= $numero; $i++){
+        if($numero % $i == 0){
+            $posibleprimo++;
+        }
 
-//         echo "$i \n";
-//         $i--;
-//     }
-// }
-$i = 2;
-$resulado = $numero_entero;
-
-while ($i < $numero_entero){
-    $i++;
-    if(($numero_entero % $i)== 0){
-        
-        echo "$i \n";
+        if($posibleprimo > 2){
+            return false;
+        }
     }
+    return true;
+}
+
+
+$i = 2;
+$resultado = $numero_entero;
+
+while ($resultado > 1){
+    if(es_primo($i) && $resultado % $i == 0){
+        echo "$i \n";
+        $resultado = $resultado / $i;
+        continue;
+    }
+    $i++;
 }
