@@ -1,9 +1,9 @@
-#incompleto
+import re
+
 operacion = input("Ingrese operación:")
-limpia1 = preg_replace('/\s+/', ' ', operacion)
-limpia2 = trim(limpia1)
-operadores = explode(' ', limpia2)
-#print_r($operadores)
+limpia1 = re.sub('/\s+/', ' ', operacion)
+limpia2 = limpia1.strip()
+operadores = limpia2.split(' ')
 
 num1 = int(operadores[0])
 num2 = int(operadores[2])
@@ -34,13 +34,13 @@ def multiplicacion(num1, num2):
 if operador == "+":
     print(suma(num1, num2))
 
-elif(operador == "-"):
+elif operador == "-":
     print(resta(num1, num2))
 
-elif(operador == "/"):
+elif operador == "/":
     print(division(num1, num2)) 
     
-elif(operador == "*"):
+elif operador == "*":
     print(multiplicacion(num1, num2)) 
     
 else:
